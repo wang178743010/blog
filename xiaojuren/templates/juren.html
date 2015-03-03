@@ -1,0 +1,225 @@
+<html><head>
+<meta charset="utf-8">
+<title>wangshu</title>
+<link href="/static/css/styles.css" rel="stylesheet">
+<link href="/static/css/animation.css" rel="stylesheet">
+<!--heard..CSS-->
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/responsiveslides.css">
+<link rel="stylesheet" href="/static/css/stylesheet/style.css">
+
+
+<!-- 返回顶部调用 begin -->
+<link href="/static/css/lrtk.css" rel="stylesheet">
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/js.js"></script>
+<!-- 返回顶部调用 end-->
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="nav">
+<a href="....?????" target="_blank">---->>>></a><a href="http://blog.sina.com.cn/u/3942592158" target="_blank">wangshu</a>
+</div>
+
+<!--header end-->
+<header>
+  <div id="logo"><a href=""><img src="/"></a></div>
+  <nav>
+    <ul>
+      <li><a href="index.html"></a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="column2.html">Carlet</a></li>
+      <li><a href="/all_left">Slow life</a></li>
+    </ul>
+  </nav>
+</header>
+<!--home page-->
+<div class="container">
+<div class="feature"> 
+  <div class="rslides_container">
+    <ul class="rslides centered-btns centered-btns1" id="slider" style="max-width: 960px;">
+    {%for a in a8%}
+      <li id="centered-btns1_s0" class="" style="display: none; float: none; position: absolute;"><img src="/media/{{a.img}}"></li>
+    {%endfor%}
+    </ul><a href="#" class="centered-btns_nav centered-btns1_nav prev">Previous</a><a href="#" class="centered-btns_nav centered-btns1_nav next">Next</a>
+  </div>
+</div>  
+</div>
+<!--END.....home page-->
+<div id="mainbody">
+  <div class="info">
+    <figure> <img src="\media\img\art.jpg" alt="Panama Hat">
+      <figcaption><strong>面对</strong> 在第一次选择坚强的时候，一定要想清楚：你是否做好了承受一切的准备。因为一旦你选择了坚强，即使只是假装的，你也必须一直坚持下去。因为你曾经的坚强会让人以为即使再大的苦，你也撑得住</figcaption>
+    </figure>
+    <div class="card">
+      <h1>我的名片</h1>
+      <p>网名：Mini little giant | 迷你小巨人</p>
+      <p>职业：python工程师</p>
+      <p>电话：15248133513</p>
+      <p>Email：178743010qq.com</p>
+      <ul class="linkmore">
+        <li><a href="/" class="talk" title="给我留言"></a></li>
+        <li><a href="/" class="address" title="联系地址"></a></li>
+        <li><a href="/" class="email" title="给我写信"></a></li>
+        <li><a href="/" class="photos" title="生活照片"></a></li>
+        <li><a href="http://user.qzone.qq.com/1064836102" class="heart" title="关注我"></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--info end-->
+  <div class="blank"></div>
+  <div class="blogs">
+    <ul class="bloglist">
+      
+      
+      {%for a in a1%}
+      <li>
+        <div class="arrow_box">
+        <h1>BOOK</h1>
+          <div class="ti"></div>
+          <!--三角形-->
+          <div class="ci"></div>
+          <!--圆形-->
+          <h2 class="title"><a href="/" target="_blank">{{a.title}}</a></h2>
+          <ul class="textinfo">
+            <a href="/"><img src="/media/{{a.img}}"></a>
+            <p> {{a.content}}</p>
+          </ul>
+          <ul class="details">
+            <li class="icon-time"><a href="#">{{a.date}}</a></li>
+          </ul>
+
+        </div>
+        <!--arrow_box end--> 
+      </li>
+      {%endfor%}
+      
+    </ul>
+    <!--bloglist end-->
+    <aside>
+      <div class="tuijian">
+        <h2>链接一</h2>
+        <ol>
+        {%for a in a2%}
+          <li><span><strong>{{a.id}}</strong></span><a href="/">{{a.title}}</a></li>
+          {%endfor%}
+        </ol>
+
+      </div>
+      <div class="toppic">
+        <h2>链接二</h2>
+        <ul>
+        {%for b in a3%}
+          <li><a href="/"><img src="/media/{{b.img}}">{{b.content}}
+            <p> {{b.tail}} </p>
+            </a></li>
+        {%endfor%}
+        </ul>
+      </div>
+      <div class="clicks">
+        <h2>链接三</h2>
+        <ol>
+        {%for a in a4%}
+          <li><span><a href="/"> {{a.head}} </a></span><a href="/"> {{a.content}} </a></li>
+        {%endfor%}
+        </ol>
+      </div>
+      <div class="search">
+        <form class="searchform" method="get" action="#">
+          <input type="text" name="s" value="Search" onfocus="this.value=''" onblur="this.value='Search'">
+        </form>
+      </div>
+      <div class="viny">
+        <dl>
+          <dt class="art"><img src="images/artwork.png" alt="专辑"></dt>
+          <dd class="icon-song"><span></span>南方姑娘</dd>
+          <dd class="icon-artist"><span></span>歌手：赵雷</dd>
+          <dd class="icon-album"><span></span>所属专辑：《赵小雷》</dd>
+          <dd class="icon-like"><span></span><a href="/">喜欢</a></dd>
+          <dd class="music">
+             <audio controls="controls" loop="loop">
+              <source src="/i/song.ogg" type="audio/ogg" />
+              <source src="/static/song/003.mp3" type="audio/mpeg" />
+              </audio>
+          </dd>
+          <!--也可以添加loop属性 音频加载到末尾时，会重新播放-->
+        </dl>
+      </div>
+    </aside>
+  </div>
+  <!--blogs end--> 
+</div>
+<!--mainbody end-->
+<footer>
+  <div class="footer-mid">
+    <div class="links">
+      <h2>未命名4</h2>
+          <div class="item active">
+                <img src="/media/{{bb}}"alt=""></div>
+    </div>
+    <div class="visitors">
+      <h2>未命名5</h2>
+      {%for a in a7%}
+      <dl>
+        <dt><img src="/media/{{a.img}} ">
+        </dt><dt>
+        </dt><dd>{{a.name}}
+        </dd>
+        <dd>在<a href="xiaojuren.com-----???" class="title"> {{a.title}} </a>中评论：</dd>
+        <dd> {{a.content}} </dd>
+      </dl>
+      {%endfor%}
+    </div>
+    <section class="flickr">
+      <h2>未命名6</h2>
+      <ul>
+      {%for a in a6%}
+        <li><a href="/"><img src="/media/{{a.img}}"></a></li>
+      {%endfor%}
+      </ul>
+    </section>
+  </div>
+<footer id="footer">
+    <div class="container text-center">
+      <p>© 2015 <a href="#">Xiaojuren.com</a>. All rights reserved.</p>
+    </div>
+    
+  </footer>
+</footer>
+<!-- jQuery代码开始 -->
+<div id="tbox"> <a id="togbook" href="/e/tool/gbook/?bid=1"></a> <a id="gotop" href="javascript:void(0)" style="display: none;"></a> </div>
+<!-- 代码结束 -->
+<!--文本框-->
+<section>
+<iframe src="http://127.0.0.1:8000/text" width="100%" height="600px" scrolling="[NO]" frameborder="0"></iframe>
+<ction>
+<!--.....-->
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/responsiveslides.js"></script>
+  <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 500,
+        maxwidth: 960,
+        namespace: "centered-btns"
+      });
+    });
+  </script>
+
+<section>
+  <form action="/add" method="POST">  
+{%csrf_token%}  
+<input type="text" name ="title" />
+<textarea type="text" name ="content" style="width:260px;height:100px" /></textarea>
+<button>发送<button>
+</form>
+
+
+</section>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>截图</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+
+
+
+
+function submitFileForm(file, type) {                   
+        var formData = new FormData();     //新建一个表单
+        formData.append('img',file,'paste.png');  //（数据，文件，文件名）添加到表单中
+        
+        var csrftoken = getCookie('csrftoken');    //  调用csrftoken函数，每上传一次就需要验证｛%csrf_token%｝
+        formData.append('csrfmiddlewaretoken',csrftoken);
+
+        var xhr = new XMLHttpRequest();
+        
+        xhr.open('POST', '/upload');
+        xhr.onload = function () {          //调用函数上传，
+            if (xhr.status == 200) {            //返回200，上传成功
+                console.log('all done: ');   
+            } else {
+                console.log('Nope');
+            }
+        };
+
+        xhr.send(formData);     //（上传表单）
+    }
+
+
+
+
+     document.onpaste = function(e){
+        var items = e.clipboardData.items;   //把截图的数据保存到items
+        console.log(JSON.stringify(items));   //控制台中打印
+        for (var i = 0; i < items.length; i++) {      //for 找找items里的数据 0-max
+            
+
+            if (items[i].type.indexOf("image") !== -1) {   //items里面第几个是img图片数据
+
+                var blob = items[i].getAsFile();   //把这个图片数据保存成一个文件
+                submitFileForm(blob, 'paste');    //保存需要先调用这个函数，（数据，文件名）才能保存，函数在上面
+                        
+            }
+        }
+
+     };
+</script>
+
+</html>
